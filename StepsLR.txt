@@ -1,0 +1,167 @@
+https://www.kaggle.com/code/prashant111/logistic-regression-classifier-tutorial
+
+https://www.astesj.com/publications/ASTESJ_050409.pdf
+Log Reg
+
+1. Used when the target variable is a categorical valriable
+	for 2 variables we use Binary classfication or for more than we use multiclass classfication
+
+2. Boundary approach is not good because there will high chances of misclassfications, the data points will be directly assigned to one the levels instead we want  a probability - comes the sigmoid curve - drawn based on beta0 and Beta1 
+
+3. How to decide which is the best sigmoid curve(B0 and B1) -  likelihood function.
+
+4. log of odds to explain better
+
+5. select variable by RFE(Feature elimination)
+
+6. VIF
+
+
+
+1.	Data cleaning and preparation
+		Combining three dataframes
+		Handling categorical variables
+		Mapping categorical variables to integers
+		Dummy variable creation 
+			One Hot encoding
+			Dummy variable trap
+		Handling missing values
+2.	Test-train split and scaling
+3.	Model Building
+		Feature elimination based on correlations
+		Feature selection using RFE (Coarse Tuning)
+		Manual feature elimination (using p-values and VIFs)
+4.	Model Evaluation
+		Accuracy
+		Sensitivity and Specificity
+		Optimal cut-off using ROC curve
+		Precision and Recall
+5.	Predictions on the test set
+
+
+
+In this blog I will briefly explain about Logistic regression, but before getting into it let me give you some basics.
+
+
+BackGround
+
+What is Machine Learning
+
+Machine learning (ML) is a type of artificial intelligence (AI) that allows software applications to become more accurate at predicting outcomes without being explicitly programmed to do so. Machine learning algorithms use historical data as input to predict new output values.
+
+There are different ways to train machine learning algorithms, each with their own advantages and disadvantages. To understand the pros and cons of each type of machine learning, we must first look at what kind of data they ingest. In ML, there are two kinds of data — labeled data and unlabeled data.
+
+	Labeled data has both the input and output parameters in a completely machine-readable pattern, but requires a lot of human labor to label the data, to begin with. 
+
+	Unlabeled data only has one or none of the parameters in a machine-readable form. This negates the need for human labor but requires more complex solutions.
+
+There are also some types of machine learning algorithms that are used in very specific use-cases, but three main methods are used today.
+
+Machine learning is basically divided into 3 categories
+
+	1.	Supervised learning
+	2.	UnSupervised learning
+	3.	Reinforcement learning
+
+
+Supervised learning
+
+	Supervised learning, as the name indicates, has the presence of a supervisor as a teacher. Basically supervised learning is when we teach or train the machine using data that is well labelled. Which means some data is already tagged with the correct answer. After that, the machine is provided with a new set of examples(data) so that the supervised learning algorithm analyses the training data(set of training examples) and produces a correct outcome from labelled data.
+
+	For instance, suppose you are given a basket filled with different kinds of fruits. Now the first step is to train the machine with all the different fruits one by one like this.
+
+	a.	If the shape of the object is rounded and has a depression at the top, is red in color, then it will be labeled as –Apple.
+	b.	If the shape of the object is a long curving cylinder having Green-Yellow color, then it will be labeled as –Banana. 
+
+	Now suppose after training the data, you have given a new separate fruit, say Banana from the basket, and asked to identify it
+
+	Since the machine has already learned the things from previous data and this time has to use it wisely. It will first classify the fruit with its shape and color and would confirm the fruit name as BANANA and put it in the Banana category. Thus the machine learns the things from training data(basket containing fruits) and then applies the knowledge to test data(new fruit). 
+
+
+	Supervised learning is classified into two categories of algorithms: 
+
+	Classification: A classification problem is when the output variable is a category, such as “Red” or “blue” , “disease” or “no disease”.
+	Regression: A regression problem is when the output variable is a real value, such as “dollars” or “weight”.
+
+	Supervised learning deals with or learns with “labeled” data. This implies that some data is already tagged with the correct answer.
+
+	Types:-
+
+		Regression
+		Logistic Regression
+		Classification
+		Naive Bayes Classifiers
+		K-NN (k nearest neighbors)
+		Decision Trees
+		Support Vector Machine
+	
+
+	Advantages:-
+
+		Supervised learning allows collecting data and produces data output from previous experiences.
+		Helps to optimize performance criteria with the help of experience.
+		Supervised machine learning helps to solve various types of real-world computation problems.
+
+
+	Disadvantages:-
+
+		Classifying big data can be challenging.
+		Training for supervised learning needs a lot of computation time. So, it requires a lot of time.
+
+
+
+
+Unsupervised learning is the training of a machine using information that is neither classified nor labeled and allowing the algorithm to act on that information without guidance. Here the task of the machine is to group unsorted information according to similarities, patterns, and differences without any prior training of data. 
+
+Unlike supervised learning, no teacher is provided that means no training will be given to the machine. Therefore the machine is restricted to find the hidden structure in unlabeled data by itself. 
+For instance, suppose it is given an image having both dogs and cats which it has never seen. 
+Thus the machine has no idea about the features of dogs and cats so we can’t categorize it as ‘dogs and cats ‘. But it can categorize them according to their similarities, patterns, and differences, i.e., we can easily categorize the above picture into two parts. The first may contain all pics having dogs in them and the second part may contain all pics having cats in them. Here you didn’t learn anything before, which means no training data or examples. 
+
+It allows the model to work on its own to discover patterns and information that was previously undetected. It mainly deals with unlabelled data.
+
+Unsupervised learning is classified into two categories of algorithms: 
+
+	Clustering: A clustering problem is where you want to discover the inherent groupings in the data, such as grouping customers by purchasing behavior.
+	Association: An association rule learning problem is where you want to discover rules that describe large portions of your data, such as people that buy X also tend to buy Y.
+
+Types of Unsupervised Learning:-
+
+Clustering
+
+Exclusive (partitioning)
+Agglomerative
+Overlapping
+Probabilistic
+Clustering Types:-
+
+Hierarchical clustering
+K-means clustering
+Principal Component Analysis
+Singular Value Decomposition
+Independent Component Analysis
+
+
+
+
+Binary classification
+
+Sigmoid function
+
+Likelihood function
+
+Building a logistic regression model in Python
+
+Odds and log odds
+
+
+
+
+
+Basically classification problem in which the target variable has only 2 possible values, or in other words, two classes. Some examples of binary classification are –
+
+1. A bank wants to predict, based on some variables, whether a particular customer will default on a loan or not
+2. A factory manager wants to predict, based on some variables, whether a particular machine will break down in the next month or not
+3. Google’s backend wants to predict, based on some variables, whether an incoming email is spam or ham
+
+
+ 

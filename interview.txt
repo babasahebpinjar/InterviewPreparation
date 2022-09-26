@@ -1,0 +1,35 @@
+Master log :
+
+1.	Why is it required ?
+	CDR contains all the information of a call like CalledNumber, callingNumber etc. The detailing depends on log level info and in the first log level itself most of the data will be provided which is required for further process which is sent to our uClick system
+
+	When a call is made the mediation system passes only parameters to our system which is required for them to generate the bill or to do month end settlement, here the mediation system is Nokia.
+
+	But, there are few cases where the client wants to know more details about a specific number or a specfic number sequence, for example a number 
+
+	67777 has called duration more than 1000 
+	is suspected as spam
+	Add more reasons
+
+2. What the tool does
+
+	1. The tool increases the log level( which is done only while debugging because more the loglevel it eats up space)
+	2. Parses the cdr file to get the required information from the cdr
+
+3. How we did it
+
+	1.  linux Scripts to get the cdr files
+	2.  parse the cdr files
+	3.  Purge the cdr files
+
+The parsing logic was dynamic
+
+
+
+
+C++/multithreading
+Algorithm backgrounds
+Knowledge of Graph Theory/Timing is an asset
+
+
+	
